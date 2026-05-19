@@ -2,8 +2,8 @@ FROM debian:latest
 
 RUN apt update
 
-RUN apt install nano
+RUN apt install -y nano nodejs
 
 COPY server.mjs /server.mjs
 
-ENTRYPOINT [ "tail", "-f", "/dev/null" ]
+ENTRYPOINT [ "node", "/server.mjs" ]
